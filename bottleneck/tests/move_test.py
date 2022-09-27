@@ -356,7 +356,8 @@ def test_move_quantile_with_infs_and_nans():
     rs = np.random.RandomState([1, 2, 3])
     fracs = [0., 0.2, 0.4, 0.6, 0.8, 1.]
     inf_minf_nan_fracs = [triple for triple in itertools.product(fracs, fracs, fracs) if np.sum(triple) <= 1]
-    for size in [1, 2, 3, 5, 9, 10, 17, 20, 31]:
+    # for size in [1, 2, 3, 5, 9, 10, 17, 20, 31]:
+    for size in [1, 2, 3, 5, 9, 10]:
         for min_count in [1, 2, 3, size//2, size - 1, size]:
             if min_count < 1 or min_count > size:
                 continue
